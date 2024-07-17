@@ -1,59 +1,81 @@
 <script>
 export default {
   name: "CoursePortalHero",
+  data() {
+    return {
+      clientsImg: [],
+    };
+  },
 };
 </script>
 
 <template>
   <div class="container">
-    <!-- sezione sinistra dell'hero -->
-    <div class="left-content-section">
-      <!-- titolo e sottotitolo -->
-      <div class="title-subtitle">
-        <h1>Distant learning for further expansion</h1>
-        <p>
-          Learning is a life-long journey that in fact we never find the
-          terminate stop. Stop searching, enjoy the process.
-        </p>
+    <div class="hero">
+      <!-- sezione sinistra dell'hero -->
+      <div class="left-content-section">
+        <!-- titolo e sottotitolo -->
+        <div class="title-subtitle">
+          <h1>Distant learning for further expansion</h1>
+          <p>
+            Learning is a life-long journey that in fact we never find the
+            terminate stop. Stop searching, enjoy the process.
+          </p>
+        </div>
+
+        <div class="hero-btn">
+          <a href="#">icon Download free guide</a>
+        </div>
+        <div class="questions">
+          Have questions? <a href="#">Get Free Sample arrow</a>
+        </div>
       </div>
 
-      <div class="hero-btn">
-        <a href="#">icon Download free guide</a>
-      </div>
-      <div class="questions">
-        Have questions? <a href="#">Get Free Sample arrow</a>
+      <!-- sezione destra -->
+      <div class="right-img-section">
+        <div class="main-img">
+          <img
+            src="../../../public/Immagini/about-me-profile-ohm4dxoearqbxny7q3bq1pzbdgofdx0tobbeqcvzd0.jpg"
+            alt=""
+          />
+        </div>
+        <img
+          class="shape shape8"
+          src="../../../public/Immagini/maxcoach-shape-08.png"
+          alt=""
+        />
+        <img
+          class="shape shape8-1"
+          src="../../../public/Immagini/maxcoach-shape-08.png"
+          alt=""
+        />
+        <img
+          class="shape shape7"
+          src="../../../public/Immagini/maxcoach-shape-07-150x150.png"
+          alt=""
+        />
+        <img
+          class="shape shape2"
+          src="../../../public/Immagini/maxcoach-shape-02.png"
+          alt=""
+        />
+        <div class="round"></div>
       </div>
     </div>
 
-    <!-- sezione destra -->
-    <div class="right-img-section">
-      <div class="main-img">
-        <img
-          src="../../../public/Immagini/about-me-profile-ohm4dxoearqbxny7q3bq1pzbdgofdx0tobbeqcvzd0.jpg"
-          alt=""
-        />
+    <div class="clients">
+      <div class="client-img">
+        <img src="../../../public/Immagini/client-logo-01.png" alt="" />
       </div>
-      <img
-        class="shape shape8"
-        src="../../../public/Immagini/maxcoach-shape-08.png"
-        alt=""
-      />
-      <img
-        class="shape shape8-1"
-        src="../../../public/Immagini/maxcoach-shape-08.png"
-        alt=""
-      />
-      <img
-        class="shape shape7"
-        src="../../../public/Immagini/maxcoach-shape-07-150x150.png"
-        alt=""
-      />
-      <img
-        class="shape shape2"
-        src="../../../public/Immagini/maxcoach-shape-02.png"
-        alt=""
-      />
-      <div class="round"></div>
+      <div class="client-img">
+        <img src="../../../public/Immagini/client-logo-01.png" alt="" />
+      </div>
+      <div class="client-img">
+        <img src="../../../public/Immagini/client-logo-01.png" alt="" />
+      </div>
+      <div class="client-img">
+        <img src="../../../public/Immagini/client-logo-01.png" alt="" />
+      </div>
     </div>
   </div>
 </template>
@@ -64,9 +86,14 @@ export default {
 .container {
   width: 70%;
   margin: 60px auto;
+}
+
+// HERO SECTION
+.hero {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 // left content
@@ -132,7 +159,7 @@ export default {
       border-radius: 50%;
     }
   }
-
+  // background shapes
   .shape {
     position: absolute;
   }
@@ -171,4 +198,6 @@ export default {
     left: -30px;
   }
 }
+
+// CLIENTS SECTION
 </style>
