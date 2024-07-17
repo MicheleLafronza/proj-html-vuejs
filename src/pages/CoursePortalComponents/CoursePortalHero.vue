@@ -24,10 +24,15 @@ export default {
         </div>
 
         <div class="hero-btn">
-          <a href="#">icon Download free guide</a>
+          <a href="#"
+            ><i class="fa-solid fa-download"></i> Download free guide</a
+          >
         </div>
         <div class="questions">
-          Have questions? <a href="#">Get Free Sample arrow</a>
+          Have questions?
+          <a href="#"
+            >Get Free Sample <i class="fa-solid fa-arrow-right"></i
+          ></a>
         </div>
       </div>
 
@@ -143,9 +148,48 @@ export default {
     margin-bottom: 30px;
 
     a {
+      text-decoration: none;
+      position: relative;
       color: $main-green;
-      padding: 3px 0;
       font-weight: 600;
+
+      // HOVER EFFECT
+      // linea verde in entrata
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 0;
+        height: 1px;
+        background-color: $main-green;
+        transition: width 0.8s ease-in-out, left 0.4s ease-in-out;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+          left: 0;
+        }
+      }
+      // linea verde in uscita
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 1px;
+        background-color: lightgray;
+        transition: width 0.3s ease-in-out, left 0.2s ease-in-out;
+      }
+
+      &:hover {
+        &::before {
+          width: 0;
+          right: 0;
+        }
+      }
     }
   }
 }
