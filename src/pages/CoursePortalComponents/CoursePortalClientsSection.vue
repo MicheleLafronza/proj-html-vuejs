@@ -44,7 +44,7 @@ export default {
       :slidesPerView="6"
       :centeredSlides="false"
       :spaceBetween="20"
-      :grabCursor="true"
+      :grabCursor="false"
       :loop="true"
       :pagination="{
         clickable: true,
@@ -54,7 +54,6 @@ export default {
       :modules="modules"
       class="mySwiper"
     >
-      swiperw
       <swiper-slide class="slide" v-for="(slides, index) in clientImg">
         <img :src="slides" alt="logo" />
       </swiper-slide>
@@ -64,7 +63,7 @@ export default {
 
 <style lang="scss" scoped>
 .clients {
-  margin: 0 auto;
+  margin: 40px auto;
   overflow: hidden;
 }
 
@@ -78,5 +77,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    opacity: 0.5;
+    transition: opacity 0.4s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 </style>

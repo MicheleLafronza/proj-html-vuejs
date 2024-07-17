@@ -70,7 +70,8 @@ export default {
 
 .container {
   width: 70%;
-  margin: 60px auto;
+  margin: 0 auto;
+  margin-top: 60px;
 }
 
 // HERO SECTION
@@ -78,7 +79,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
 }
 
 // left content
@@ -125,7 +125,6 @@ export default {
     font-size: 14px;
     color: $secondary-text;
     font-weight: 300;
-    margin-bottom: 30px;
 
     a {
       text-decoration: none;
