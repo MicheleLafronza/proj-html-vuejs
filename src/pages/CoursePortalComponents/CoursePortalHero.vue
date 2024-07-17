@@ -1,11 +1,6 @@
 <script>
 export default {
   name: "CoursePortalHero",
-  data() {
-    return {
-      clientsImg: [],
-    };
-  },
 };
 </script>
 
@@ -40,46 +35,31 @@ export default {
       <div class="right-img-section">
         <div class="main-img">
           <img
-            src="../../../public/Immagini/about-me-profile-ohm4dxoearqbxny7q3bq1pzbdgofdx0tobbeqcvzd0.jpg"
+            src="/Immagini/about-me-profile-ohm4dxoearqbxny7q3bq1pzbdgofdx0tobbeqcvzd0.jpg"
             alt=""
           />
         </div>
         <img
           class="shape shape8"
-          src="../../../public/Immagini/maxcoach-shape-08.png"
+          src="/Immagini/maxcoach-shape-08.png"
           alt=""
         />
         <img
           class="shape shape8-1"
-          src="../../../public/Immagini/maxcoach-shape-08.png"
+          src="/Immagini/maxcoach-shape-08.png"
           alt=""
         />
         <img
           class="shape shape7"
-          src="../../../public/Immagini/maxcoach-shape-07-150x150.png"
+          src="/Immagini/maxcoach-shape-07-150x150.png"
           alt=""
         />
         <img
           class="shape shape2"
-          src="../../../public/Immagini/maxcoach-shape-02.png"
+          src="/Immagini/maxcoach-shape-02.png"
           alt=""
         />
         <div class="round"></div>
-      </div>
-    </div>
-
-    <div class="clients">
-      <div class="client-img">
-        <img src="../../../public/Immagini/client-logo-01.png" alt="" />
-      </div>
-      <div class="client-img">
-        <img src="../../../public/Immagini/client-logo-01.png" alt="" />
-      </div>
-      <div class="client-img">
-        <img src="../../../public/Immagini/client-logo-01.png" alt="" />
-      </div>
-      <div class="client-img">
-        <img src="../../../public/Immagini/client-logo-01.png" alt="" />
       </div>
     </div>
   </div>
@@ -181,7 +161,7 @@ export default {
         width: 100%;
         height: 1px;
         background-color: lightgray;
-        transition: width 0.3s ease-in-out, left 0.2s ease-in-out;
+        transition: width 0.3s ease-in-out, left 0.4s ease-in-out;
       }
 
       &:hover {
@@ -242,6 +222,4 @@ export default {
     left: -30px;
   }
 }
-
-// CLIENTS SECTION
 </style>
