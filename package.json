@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/poppins": "^5.0.14",
     "vue": "^3.4.31",
     "vue-router": "^4.4.0"
   },
