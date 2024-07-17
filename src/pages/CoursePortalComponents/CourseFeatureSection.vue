@@ -60,7 +60,7 @@ export default {
       <div class="section-title">Featured Online Courses</div>
 
       <div class="cards">
-        <div v-for="(card, index) in featureCards" class="card">
+        <div v-for="(card, index) in featureCards" :key="index" class="card">
           <div class="card-img">
             <a href="#">
               <img :src="card.img" alt="img" />

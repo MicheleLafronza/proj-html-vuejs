@@ -54,7 +54,11 @@ export default {
       :modules="modules"
       class="mySwiper"
     >
-      <swiper-slide class="slide" v-for="(slides, index) in clientImg">
+      <swiper-slide
+        class="slide"
+        v-for="(slides, index) in clientImg"
+        :key="index"
+      >
         <img :src="slides" alt="logo" />
       </swiper-slide>
     </swiper>

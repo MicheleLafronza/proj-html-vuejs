@@ -175,6 +175,7 @@ export default {
 
 // right content
 .right-img-section {
+  z-index: -1;
   width: 570px;
   position: relative;
   .main-img {
