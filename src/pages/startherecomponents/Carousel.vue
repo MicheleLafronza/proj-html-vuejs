@@ -45,8 +45,12 @@ export default {
     },
   },
   mounted() {
-    console.log(`the component is now mounted.`);
-    const autoPlay = setInterval(this.nextSlide, 5000);
+    var autoPlay = setInterval(this.nextSlide, 5000);
+    setTimeout(stop, 16000);
+    function stop() {
+      clearInterval(autoPlay);
+      console.log("autoplay terminato");
+    }
   },
 };
 </script>
