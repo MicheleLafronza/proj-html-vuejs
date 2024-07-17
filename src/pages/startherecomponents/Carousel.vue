@@ -30,7 +30,23 @@ export default {
     };
   },
   methods: {
-    nextSlide() {},
+    nextSlide() {
+      if (this.activeIndex === this.slidesImg.length - 1) {
+        this.activeIndex = 0;
+      } else {
+        this.activeIndex = this.activeIndex + 1;
+      }
+    },
+    prevSlide() {
+      if (this.activeIndex === 0) {
+        this.activeIndex = this.slidesImg.length;
+      }
+      this.activeIndex = this.activeIndex - 1;
+    },
+  },
+  mounted() {
+    console.log(`the component is now mounted.`);
+    const autoPlay = setInterval(this.nextSlide, 5000);
   },
 };
 </script>
@@ -38,6 +54,12 @@ export default {
 <template>
   <div class="carousel">
     <div class="slide">
+      <span @click="nextSlide" class="button next">
+        <i class="fa-solid fa-chevron-right"></i>
+      </span>
+      <span @click="prevSlide" class="button prev">
+        <i class="fa-solid fa-chevron-left"></i>
+      </span>
       <img :src="slidesImg[activeIndex].image" alt="" />
       <div class="text">
         <div class="title">{{ slidesImg[activeIndex].title }}</div>
@@ -110,5 +132,28 @@ img {
 
 .caption-bottom {
   font-size: 1.5rem;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1.7rem;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
 }
 </style>
