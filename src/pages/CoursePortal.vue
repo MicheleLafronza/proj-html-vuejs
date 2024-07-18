@@ -2,6 +2,7 @@
 import CoursePortalHero from "./CoursePortalComponents/CoursePortalHero.vue";
 import CoursePortalClientsSection from "./CoursePortalComponents/CoursePortalClientsSection.vue";
 import CourseFeatureSection from "./CoursePortalComponents/CourseFeatureSection.vue";
+import AvailableCourses from "./CoursePortalComponents/AvailableCourses.vue";
 
 export default {
   name: "CoursePortal",
@@ -9,6 +10,7 @@ export default {
     CoursePortalHero,
     CoursePortalClientsSection,
     CourseFeatureSection,
+    AvailableCourses,
   },
 };
 </script>
@@ -17,6 +19,7 @@ export default {
   <CoursePortalHero />
   <CoursePortalClientsSection />
   <CourseFeatureSection />
+  <AvailableCourses />
 </template>
 
 <style lang="scss" scoped></style>

@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 export default {
+  name: "CoursePortalClientsSection",
   components: {
     Swiper,
     SwiperSlide,
@@ -21,7 +22,6 @@ export default {
       modules: [Pagination],
     };
   },
-  name: "CoursePortalClientsSection",
   data() {
     return {
       clientImg: [
