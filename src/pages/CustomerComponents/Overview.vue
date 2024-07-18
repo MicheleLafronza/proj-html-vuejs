@@ -1,11 +1,6 @@
 <script>
 export default {
-  name: "Overview",
-  computed: {
-    videoUrl() {
-      return `https://www.youtube.com/watch?v=dQw4w9WgXcQ`;
-    },
-  },
+  name: "overview",
 };
 </script>
 
@@ -63,7 +58,6 @@ export default {
       </p>
       <p>Enroll in this course to find out.</p>
     </div>
-    <div class="contCardPrice"></div>
   </div>
 </template>
 

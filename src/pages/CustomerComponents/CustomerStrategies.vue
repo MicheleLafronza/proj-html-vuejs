@@ -1,4 +1,5 @@
 <script>
+import CardCourse from "./cardCourse.vue";
 import Curriculum from "./Curriculum.vue";
 import Instructor from "./Instructor.vue";
 import Overview from "./Overview.vue";
@@ -11,6 +12,7 @@ export default {
     Curriculum,
     Instructor,
     Reviews,
+    CardCourse,
   },
 
   data() {
@@ -20,15 +22,6 @@ export default {
         {
           name: "Home",
           active: true,
-        },
-        {
-          name: "Home",
-        },
-        {
-          name: "Home",
-        },
-        {
-          name: "Home",
         },
       ],
       currentIndex: 0,
@@ -97,17 +90,14 @@ export default {
     },
     updateSliderPosition() {
       const slider = this.$refs.slider;
-      const slideWidth = slider.clientWidth / 3; // Assuming 3 slides are visible at a time
-      const offset = this.currentIndex * slideWidth * 3; // Adjust for group of slides
+      const slideWidth = slider.clientWidth / 3;
+      const offset = this.currentIndex * slideWidth * 3;
       slider.style.transform = `translateX(-${offset}px)`;
     },
   },
   mounted() {
     this.updateSliderPosition();
     window.addEventListener("resize", this.updateSliderPosition);
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.updateSliderPosition);
   },
 };
 </script>
@@ -168,6 +158,9 @@ export default {
         <div v-if="selLayer === 'reviews'">
           <Reviews />
         </div>
+      </div>
+      <div class="cardCourse">
+        <CardCourse />
       </div>
     </div>
     <div class="RelCourses">
