@@ -71,7 +71,7 @@ export default {
 .container {
   width: 70%;
   margin: 0 auto;
-  margin-top: 60px;
+  padding-top: 140px;
 }
 
 // HERO SECTION
