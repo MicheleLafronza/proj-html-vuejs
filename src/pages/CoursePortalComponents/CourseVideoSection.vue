@@ -108,7 +108,7 @@ export default {
 .container {
   width: 70%;
   margin: 0 auto;
-  padding: 60px 0;
+  padding: 100px 0;
 }
 
 .row {
