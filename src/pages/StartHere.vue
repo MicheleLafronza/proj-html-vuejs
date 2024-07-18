@@ -1,12 +1,14 @@
 <script>
 import Carousel from "./startherecomponents/Carousel.vue";
 import Steps from "./startherecomponents/Steps.vue";
+import People from "./startherecomponents/People.vue";
 
 export default {
   name: "StartHere",
   components: {
     Carousel,
     Steps,
+    People,
   },
   data() {
     return {};
@@ -29,6 +31,7 @@ export default {
 
       <button class="gt-button">Get started for free</button>
     </section>
+    <People />
   </main>
 </template>
 
