@@ -11,6 +11,7 @@ export default {
         },
         {
           name: "Course Portal",
+          active: true,
           status: "HOT",
         },
         {
@@ -70,6 +71,7 @@ export default {
       LinksMainPages: [
         {
           name: "Start Here",
+          active: true,
         },
         {
           name: "Success Story",
@@ -102,6 +104,8 @@ export default {
       LinksMainCourses: [
         {
           name: "Courses Grid 01",
+          active: true,
+          href: "/customer",
         },
         {
           name: "Courses Grid 02",
@@ -177,7 +181,10 @@ export default {
         <a class="tag" href="">Home</a>
         <ul class="LinksHome">
           <li v-for="element in LinksMainHome">
-            <a class="links" href="">{{ element.name }}</a>
+            <router-link v-if="element.active" :to="{ name: 'CoursePortal' }">
+              {{ element.name }}
+            </router-link>
+            <a v-else class="links" :href="element.href">{{ element.name }}</a>
             <span v-if="element.status === 'HOT'" class="statusHot">
               {{ element.status }}</span
             >
@@ -191,7 +198,10 @@ export default {
         <a href="" class="tag">Pages</a>
         <ul class="LinksOther">
           <li v-for="element in LinksMainPages">
-            <a class="links" href="">{{ element.name }}</a>
+            <router-link v-if="element.active" :to="{ name: 'StartHere' }">
+              {{ element.name }}
+            </router-link>
+            <a v-else class="links" :href="element.href">{{ element.name }}</a>
           </li>
         </ul>
       </li>
@@ -199,7 +209,10 @@ export default {
         <a href="" class="tag">Courses</a>
         <ul class="LinksOther">
           <li v-for="element in LinksMainCourses">
-            <a class="links" href="">{{ element.name }}</a>
+            <router-link v-if="element.active" :to="{ name: 'Customer' }">
+              {{ element.name }}
+            </router-link>
+            <a v-else class="links" :href="element.href">{{ element.name }}</a>
           </li>
         </ul>
       </li>
@@ -242,6 +255,9 @@ export default {
 
 header {
   display: flex;
+  position: fixed;
+  width: 100%;
+  z-index: 50;
   align-items: center;
   justify-content: center;
   background-color: $white;
@@ -311,7 +327,7 @@ header {
     height: 28rem;
     left: -15rem;
     top: 110%;
-    z-index: 10;
+    z-index: 2;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 450ms ease;
     background-color: $white;
@@ -364,7 +380,7 @@ header {
     width: 13rem;
     left: 0;
     top: 110%;
-    z-index: 10;
+    z-index: 999;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 450ms ease;
     background-color: $white;
