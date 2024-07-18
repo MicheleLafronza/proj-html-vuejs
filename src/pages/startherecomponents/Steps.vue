@@ -55,9 +55,17 @@ export default {
         <h3 class="title">
           {{ step.title }}
         </h3>
+        <div class="inner-image-box">
+          <img :src="step.image" alt="" />
+        </div>
       </div>
     </div>
-    <div class="description box">Descrizione</div>
+    <div class="description box">
+      <div class="inner-description">
+        <h4 class="description-title">{{ step.subtitle }}</h4>
+        <p class="description-p">{{ step.description }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -88,23 +96,79 @@ export default {
   margin: 0 auto;
   display: flex;
   //debug
-  border: 1px solid black;
-  min-height: 400px;
 }
 
+// regole box non reversed
 .box {
   flex-basis: 50%;
 
   .title {
     text-align: end;
+    letter-spacing: 0.2rem;
+    font-size: 1.5rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 50px;
+    color: $main-green;
+  }
+
+  .inner-image-box {
+    padding-left: 35px;
+    padding-bottom: 20px;
+
+    img {
+      border-radius: 15px;
+    }
   }
 }
 
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+
+  .inner-description {
+    padding-left: 35px;
+    padding-right: 35px;
+
+    .description-title {
+      font-size: 1.3rem;
+    }
+
+    .description-p {
+      letter-spacing: 0.1rem;
+      font-size: 1.1rem;
+      padding-top: 20px;
+      color: $secondary-text;
+    }
+  }
+}
+
+// regole box reverse
 .row.reverse {
   flex-direction: row-reverse;
 
   .title {
     text-align: left;
+    letter-spacing: 0.2rem;
+    font-size: 1.5rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    color: $main-green;
+  }
+
+  .inner-image-box {
+    padding-left: 60px;
+
+    img {
+      border-radius: 15px;
+    }
+  }
+
+  .description {
+    text-align: end;
   }
 }
 </style>
