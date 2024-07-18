@@ -5,6 +5,8 @@ import CourseFeatureSection from "./CoursePortalComponents/CourseFeatureSection.
 import AvailableCourses from "./CoursePortalComponents/AvailableCourses.vue";
 import CourseVideoSection from "./CoursePortalComponents/CourseVideoSection.vue";
 import CourseTestimonialSection from "./CoursePortalComponents/CourseTestimonialSection.vue";
+import ResultsSection from "./CoursePortalComponents/ResultsSection.vue";
+import CourseBlog from "./CoursePortalComponents/CourseBlog.vue";
 
 export default {
   name: "CoursePortal",
@@ -15,6 +17,8 @@ export default {
     AvailableCourses,
     CourseVideoSection,
     CourseTestimonialSection,
+    ResultsSection,
+    CourseBlog,
   },
 };
 </script>
@@ -26,6 +30,8 @@ export default {
   <AvailableCourses />
   <CourseVideoSection />
   <CourseTestimonialSection />
+  <ResultsSection />
+  <CourseBlog />
 </template>
 
 <style lang="scss" scoped></style>

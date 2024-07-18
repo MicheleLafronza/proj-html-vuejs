@@ -180,7 +180,7 @@ export default {
       <li class="Home">
         <a class="tag" href="">Home</a>
         <ul class="LinksHome">
-          <li v-for="element in LinksMainHome">
+          <li v-for="(element, index) in LinksMainHome" :key="index">
             <router-link v-if="element.active" :to="{ name: 'CoursePortal' }">
               {{ element.name }}
             </router-link>
@@ -197,7 +197,7 @@ export default {
       <li class="Pages">
         <a href="" class="tag">Pages</a>
         <ul class="LinksOther">
-          <li v-for="element in LinksMainPages">
+          <li v-for="(element, index) in LinksMainPages" :key="index">
             <router-link v-if="element.active" :to="{ name: 'StartHere' }">
               {{ element.name }}
             </router-link>
@@ -208,7 +208,7 @@ export default {
       <li class="Courses">
         <a href="" class="tag">Courses</a>
         <ul class="LinksOther">
-          <li v-for="element in LinksMainCourses">
+          <li v-for="(element, index) in LinksMainCourses" :key="index">
             <router-link v-if="element.active" :to="{ name: 'Customer' }">
               {{ element.name }}
             </router-link>
@@ -219,7 +219,7 @@ export default {
       <li class="Features">
         <a href="" class="tag">Features</a>
         <ul class="LinksOther">
-          <li v-for="element in LinksMainFeatures">
+          <li v-for="(element, index) in LinksMainFeatures" :key="index">
             <a class="links" href="">{{ element.name }}</a>
           </li>
         </ul>
@@ -227,7 +227,7 @@ export default {
       <li class="Blog">
         <a href="" class="tag">Blog</a>
         <ul class="LinksOther">
-          <li v-for="element in LinksMainBlog">
+          <li v-for="(element, index) in LinksMainBlog" :key="index">
             <a class="links" href="">{{ element.name }}</a>
           </li>
         </ul>
@@ -235,7 +235,7 @@ export default {
       <li class="Shop">
         <a href="" class="tag">Shop</a>
         <ul class="LinksOther">
-          <li v-for="element in LinksMainShop">
+          <li v-for="(element, index) in LinksMainShop" :key="index">
             <a class="links" href="">{{ element.name }}</a>
           </li>
         </ul>
