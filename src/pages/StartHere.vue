@@ -2,6 +2,7 @@
 import Carousel from "./startherecomponents/Carousel.vue";
 import Steps from "./startherecomponents/Steps.vue";
 import People from "./startherecomponents/People.vue";
+import Accordion from "./startherecomponents/Accordion.vue";
 
 export default {
   name: "StartHere",
@@ -9,6 +10,7 @@ export default {
     Carousel,
     Steps,
     People,
+    Accordion,
   },
   data() {
     return {};
@@ -32,6 +34,7 @@ export default {
       <button class="gt-button">Get started for free</button>
     </section>
     <People />
+    <Accordion />
   </main>
 </template>
 
