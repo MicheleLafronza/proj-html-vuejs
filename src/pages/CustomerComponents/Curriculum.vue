@@ -331,14 +331,15 @@ export default {
   border-radius: 5px;
   padding-top: 1rem;
   margin-bottom: 4rem;
+  width: 100%;
 }
 
 .contMegaCard .row:nth-child(odd) {
-  background-color: $white; /* Colore per le righe dispari */
+  background-color: $white;
 }
 
 .contMegaCard .row:nth-child(even) {
-  background-color: rgb(240, 240, 240); /* Colore per le righe pari */
+  background-color: rgb(240, 240, 240);
 }
 
 .cardTitle {

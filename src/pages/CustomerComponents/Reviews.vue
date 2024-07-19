@@ -113,7 +113,8 @@ export default {
     </div>
     <div class="rowRecen">
       <img
-        src="https://maxcoach-4437.kxcdn.com/main/wp-content/up…ss-profile/1/1c2c9a0fac3cd923d80b4ea64a0806ce.jpg"
+        class="imgOwen"
+        src="https://maxcoach-4437.kxcdn.com/main/wp-content/uploads/learn-press-profile/1/1c2c9a0fac3cd923d80b4ea64a0806ce.jpg"
         alt=""
       />
       <div class="infoRat">
@@ -222,7 +223,7 @@ h2 {
 }
 
 .contRecen {
-  margin-top: 6rem;
+  margin-top: 4rem;
 }
 
 .rowRecen {
@@ -230,6 +231,7 @@ h2 {
   display: flex;
   color: $seondary-page-text;
   border-bottom: 1px solid #eee;
+  margin: 2rem 0;
 
   .infoRat {
     width: 100%;
@@ -247,6 +249,13 @@ h2 {
     width: 6rem;
     height: 6rem;
     margin: 0 3rem 0 1rem;
+  }
+
+  .imgOwen {
+    width: 6rem;
+    height: 6rem;
+    margin: 0 3rem 0 1rem;
+    border-radius: 50%;
   }
 
   .titleRat {

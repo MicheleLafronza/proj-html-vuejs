@@ -104,59 +104,61 @@ export default {
 
 <template>
   <main>
+    <div class="reLink">
+      <div v-for="element in reLink">
+        <router-link v-if="element.active" :to="{ name: 'CoursePortal' }">
+          {{ element.name }}
+        </router-link>
+      </div>
+      /
+      <a> Courses</a>
+      /
+      <a>Information Technology </a>
+      /
+      <a class="selPage"> Customer-centric Info-Tech Strategies</a>
+    </div>
+    <h1 class="title">Customer-centric Info-Tech Strategies</h1>
     <div class="mainContent">
-      <div class="reLink">
-        <div v-for="element in reLink">
-          <router-link v-if="element.active" :to="{ name: 'CoursePortal' }">
-            {{ element.name }}
-          </router-link>
+      <div class="contentWidth">
+        <div class="Layers">
+          <button
+            @click="selectTab('Overview')"
+            :class="{ active: selLayer === 'Overview' }"
+          >
+            Overview
+          </button>
+          <button
+            @click="selectTab('curriculum')"
+            :class="{ active: selLayer === 'curriculum' }"
+          >
+            Curriculum
+          </button>
+          <button
+            @click="selectTab('instructor')"
+            :class="{ active: selLayer === 'instructor' }"
+          >
+            Instructor
+          </button>
+          <button
+            @click="selectTab('reviews')"
+            :class="{ active: selLayer === 'reviews' }"
+          >
+            Reviews
+          </button>
         </div>
-        /
-        <a> Courses</a>
-        /
-        <a>Information Technology </a>
-        /
-        <a class="selPage"> Customer-centric Info-Tech Strategies</a>
-      </div>
-      <h1 class="title">Customer-centric Info-Tech Strategies</h1>
-      <div class="Layers">
-        <button
-          @click="selectTab('Overview')"
-          :class="{ active: selLayer === 'Overview' }"
-        >
-          Overview
-        </button>
-        <button
-          @click="selectTab('curriculum')"
-          :class="{ active: selLayer === 'curriculum' }"
-        >
-          Curriculum
-        </button>
-        <button
-          @click="selectTab('instructor')"
-          :class="{ active: selLayer === 'instructor' }"
-        >
-          Instructor
-        </button>
-        <button
-          @click="selectTab('reviews')"
-          :class="{ active: selLayer === 'reviews' }"
-        >
-          Reviews
-        </button>
-      </div>
-      <div class="tab-content">
-        <div v-if="selLayer === 'Overview'">
-          <Overview />
-        </div>
-        <div v-if="selLayer === 'curriculum'">
-          <Curriculum />
-        </div>
-        <div v-if="selLayer === 'instructor'">
-          <Instructor />
-        </div>
-        <div v-if="selLayer === 'reviews'">
-          <Reviews />
+        <div class="tab-content">
+          <div v-if="selLayer === 'Overview'">
+            <Overview />
+          </div>
+          <div v-if="selLayer === 'curriculum'">
+            <Curriculum />
+          </div>
+          <div v-if="selLayer === 'instructor'">
+            <Instructor />
+          </div>
+          <div v-if="selLayer === 'reviews'">
+            <Reviews />
+          </div>
         </div>
       </div>
       <div class="cardCourse">
@@ -202,6 +204,14 @@ export default {
 main {
   padding: 90px 20px 0 20px;
   color: $secondary-text;
+
+  .mainContent {
+    display: flex;
+  }
+
+  .contentWidth {
+    width: 85%;
+  }
 
   .reLink a {
     cursor: pointer;
@@ -262,7 +272,7 @@ main {
 
   .Layers {
     display: flex;
-    width: 70%;
+    width: 90%;
     border-bottom: 2px solid $most-viewed-bg;
   }
 
@@ -288,8 +298,8 @@ main {
   }
 
   .tab-content {
-    width: 70%;
-    margin-top: 20px;
+    width: 90%;
+    margin-top: 2rem;
   }
 
   .RelCourses {
