@@ -6,6 +6,13 @@ import NotFound from "./pages/NotFound.vue";
 import PageHeader from "./components/PageHeader.vue";
 const router = createRouter({
   history: createWebHistory(),
+
+  // funzione per far si che quando si caricano altre pagine vengano visualizzate sempre a partire dall inizio
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return { top: 0 };
+  },
+
   routes: [
     {
       path: "/",
