@@ -274,10 +274,12 @@ main {
     background-color: transparent;
     border-bottom: 2px solid transparent;
     color: $secondary-text;
-  }
+    transition: color 300ms ease;
+    font-weight: 400;
 
-  .active {
-    font-weight: 600;
+    &:hover {
+      color: $seondary-page-text;
+    }
   }
 
   .Layers button.active {
