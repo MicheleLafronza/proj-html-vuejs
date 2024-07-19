@@ -61,6 +61,29 @@ export default {
       ],
     };
   },
+  methods: {
+    handleMouseMove(event) {
+      // con client pprendiamo le coordinate del mouse
+      this.mouseX = event.clientX;
+      this.mouseY = event.clientY;
+      this.updateShapePositions();
+    },
+    updateShapePositions() {
+      // Seleziona tutti gli elementi con la classe 'shape'
+      const shapes = document.querySelectorAll(".shape");
+
+      // Itera su ciascun elemento 'shape'
+      shapes.forEach((shape, index) => {
+        // Calcola gli offset di spostamento basati sull'indice dell'elemento
+        const offsetX = 50;
+        const offsetY = 50;
+        // Aggiorna lo stile di trasformazione dell'elemento
+        shape.style.transform = `translate(${this.mouseX / offsetX}px, ${
+          this.mouseY / offsetY
+        }px)`;
+      });
+    },
+  },
 };
 </script>
 
@@ -107,7 +130,7 @@ export default {
         <div class="swiper-pagination custom-pagination"></div>
       </div>
 
-      <div class="cta-section">
+      <div class="cta-section" @mousemove="handleMouseMove">
         <!-- decoration img -->
         <img
           class="shape shape0"

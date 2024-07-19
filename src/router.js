@@ -10,7 +10,7 @@ const router = createRouter({
   // funzione per far si che quando si caricano altre pagine vengano visualizzate sempre a partire dall inizio
   scrollBehavior(to, from, savedPosition) {
     // always scroll to top
-    return { top: 0 };
+    return { top: 0, behavior: "smooth" };
   },
 
   routes: [

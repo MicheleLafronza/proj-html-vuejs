@@ -1,11 +1,34 @@
 <script>
 export default {
   name: "CourseNewsLetterSection",
+  methods: {
+    handleMouseMove(event) {
+      // con client pprendiamo le coordinate del mouse
+      this.mouseX = event.clientX;
+      this.mouseY = event.clientY;
+      this.updateShapePositions();
+    },
+    updateShapePositions() {
+      // Seleziona tutti gli elementi con la classe 'shape'
+      const shapes = document.querySelectorAll(".shape");
+
+      // Itera su ciascun elemento 'shape'
+      shapes.forEach((shape, index) => {
+        // Calcola gli offset di spostamento basati sull'indice dell'elemento
+        const offsetX = 50;
+        const offsetY = 50;
+        // Aggiorna lo stile di trasformazione dell'elemento
+        shape.style.transform = `translate(${this.mouseX / offsetX}px, ${
+          this.mouseY / offsetY
+        }px)`;
+      });
+    },
+  },
 };
 </script>
 
 <template>
-  <div class="container">
+  <div class="container" @mousemove="handleMouseMove">
     <!-- decoration img -->
     <img class="shape shape0" src="/Immagini/maxcoach-shape-02.png" alt="" />
     <img class="shape shape1" src="/Immagini/maxcoach-shape-09.png" alt="" />

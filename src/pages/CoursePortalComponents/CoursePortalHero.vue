@@ -1,11 +1,40 @@
 <script>
 export default {
   name: "CoursePortalHero",
+  data() {
+    return {
+      mouseX: 0,
+      mouseY: 0,
+    };
+  },
+  methods: {
+    handleMouseMove(event) {
+      // con client pprendiamo le coordinate del mouse
+      this.mouseX = event.clientX;
+      this.mouseY = event.clientY;
+      this.updateShapePositions();
+    },
+    updateShapePositions() {
+      // Seleziona tutti gli elementi con la classe 'shape'
+      const shapes = document.querySelectorAll(".shape");
+
+      // Itera su ciascun elemento 'shape'
+      shapes.forEach((shape, index) => {
+        // Calcola gli offset di spostamento basati sull'indice dell'elemento
+        const offsetX = 50;
+        const offsetY = 50;
+        // Aggiorna lo stile di trasformazione dell'elemento
+        shape.style.transform = `translate(${this.mouseX / offsetX}px, ${
+          this.mouseY / offsetY
+        }px)`;
+      });
+    },
+  },
 };
 </script>
 
 <template>
-  <div class="container">
+  <div class="container" @mousemove="handleMouseMove">
     <div class="hero">
       <!-- sezione sinistra dell'hero -->
       <div class="left-content-section">
@@ -59,7 +88,7 @@ export default {
           src="/Immagini/maxcoach-shape-02.png"
           alt=""
         />
-        <div class="round"></div>
+        <div class="round shape"></div>
       </div>
     </div>
   </div>
