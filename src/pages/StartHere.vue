@@ -79,7 +79,7 @@ main {
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: cornflowerblue;
+      background-color: #3f3a64;
       cursor: pointer;
     }
   }

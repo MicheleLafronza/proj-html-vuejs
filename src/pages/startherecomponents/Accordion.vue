@@ -46,13 +46,25 @@ export default {
     };
   },
   methods: {
+    closeAllLeftCards() {
+      this.accordionCardsLeft.forEach((card) => {
+        card.open = false;
+      });
+    },
+    closeAllRightCards() {
+      this.accordionCardsRight.forEach((card) => {
+        card.open = false;
+      });
+    },
     openCardLeft(index) {
-      this.accordionCardsLeft[index].open =
-        !this.accordionCardsLeft[index].open;
+      const isOpen = this.accordionCardsLeft[index].open;
+      this.closeAllLeftCards();
+      this.accordionCardsLeft[index].open = !isOpen;
     },
     openCardRight(index) {
-      this.accordionCardsRight[index].open =
-        !this.accordionCardsRight[index].open;
+      const isOpen = this.accordionCardsRight[index].open;
+      this.closeAllRightCards();
+      this.accordionCardsRight[index].open = !isOpen;
     },
   },
 };
@@ -151,6 +163,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     margin-right: 20px;
 
     .out-accordion {
