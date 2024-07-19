@@ -3,7 +3,6 @@ import CoursePortal from "./pages/CoursePortal.vue";
 import Customer from "./pages/Customer.vue";
 import StartHere from "./pages/StartHere.vue";
 import NotFound from "./pages/NotFound.vue";
-import PageHeader from "./components/PageHeader.vue";
 const router = createRouter({
   history: createWebHistory(),
 
