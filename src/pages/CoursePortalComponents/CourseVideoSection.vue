@@ -1,10 +1,55 @@
 <script>
 export default {
   name: "CourseVideoSection",
+  data() {
+    return {
+      modalState: false,
+    };
+  },
+  methods: {
+    //funzione per attivare la modale
+    modalActive() {
+      this.modalState = true;
+      console.log(this.modalState);
+    },
+    // funzione per chiudere la modale
+    closeModal() {
+      this.modalState = false;
+    },
+    // funzione per far si che quando si clicca fuori dal video si chiuda la modale
+    outsideClick(event) {
+      if (event.target.classList.contains("modal")) {
+        this.closeModal();
+      }
+    },
+  },
 };
 </script>
 
 <template>
+  <!-- modale per video youtube-->
+  <div
+    class="modal"
+    @click="outsideClick"
+    :class="modalState === true ? 'active' : ''"
+  >
+    <div class="share"><i class="fa-solid fa-share-nodes"></i></div>
+    <div @click="closeModal" class="close-modal">
+      <i class="fa-solid fa-x"></i>
+    </div>
+    <iframe
+      width="1276"
+      height="718"
+      src="https://www.youtube.com/embed/ElFJ1qcl74U"
+      title="Easily Customize Your Coaching Site With Elementor &amp; MaxCoach"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <!-- ********************** -->
+
   <div class="main-container">
     <div class="bg-decoration">
       <svg
@@ -50,7 +95,7 @@ export default {
 
           <div class="shape round"></div>
           <!-- ********************************* -->
-          <div class="video-btn">
+          <div class="video-btn" @click="modalActive">
             <img
               class="image"
               src="/Immagini/home-2-popup-video-poster.jpg"
@@ -85,6 +130,52 @@ export default {
 <style lang="scss" scoped>
 @use "/src/style/partials/mixins" as *;
 @use "/src/style/partials/variables" as *;
+
+//modale style
+.modal {
+  display: none;
+  align-content: center;
+  text-align: center;
+  position: fixed; /* Stay in place */
+  z-index: 10000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: black;
+
+  iframe {
+    max-width: 800px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .close-modal,
+  .share {
+    color: $main-gray;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    cursor: pointer;
+    transition: color 0.8s;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .close-modal {
+    right: 20px;
+  }
+
+  .share {
+    right: 60px;
+  }
+}
+.active {
+  display: block;
+}
+// ********************
 
 .main-container {
   position: relative;
