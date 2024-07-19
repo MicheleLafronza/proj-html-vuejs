@@ -178,7 +178,7 @@ export default {
     <img src="/Immagini/dark-logo.png" alt="" />
     <ul class="headerMainLinks">
       <li class="Home">
-        <a class="tag" href="">Home</a>
+        <a class="tag" href="">Home <i class="fa-solid fa-chevron-down"></i></a>
         <ul class="LinksHome">
           <li v-for="(element, index) in LinksMainHome" :key="index">
             <router-link v-if="element.active" :to="{ name: 'CoursePortal' }">
@@ -195,7 +195,9 @@ export default {
         </ul>
       </li>
       <li class="Pages">
-        <a href="" class="tag">Pages</a>
+        <a href="" class="tag"
+          >Pages <i class="fa-solid fa-chevron-down"></i
+        ></a>
         <ul class="LinksOther">
           <li v-for="(element, index) in LinksMainPages" :key="index">
             <router-link v-if="element.active" :to="{ name: 'StartHere' }">
@@ -206,7 +208,9 @@ export default {
         </ul>
       </li>
       <li class="Courses">
-        <a href="" class="tag">Courses</a>
+        <a href="" class="tag"
+          >Courses <i class="fa-solid fa-chevron-down"></i
+        ></a>
         <ul class="LinksOther">
           <li v-for="(element, index) in LinksMainCourses" :key="index">
             <router-link v-if="element.active" :to="{ name: 'Customer' }">
@@ -217,7 +221,9 @@ export default {
         </ul>
       </li>
       <li class="Features">
-        <a href="" class="tag">Features</a>
+        <a href="" class="tag"
+          >Features <i class="fa-solid fa-chevron-down"></i
+        ></a>
         <ul class="LinksOther">
           <li v-for="(element, index) in LinksMainFeatures" :key="index">
             <a class="links" href="">{{ element.name }}</a>
@@ -225,7 +231,7 @@ export default {
         </ul>
       </li>
       <li class="Blog">
-        <a href="" class="tag">Blog</a>
+        <a href="" class="tag">Blog <i class="fa-solid fa-chevron-down"></i></a>
         <ul class="LinksOther">
           <li v-for="(element, index) in LinksMainBlog" :key="index">
             <a class="links" href="">{{ element.name }}</a>
@@ -233,7 +239,7 @@ export default {
         </ul>
       </li>
       <li class="Shop">
-        <a href="" class="tag">Shop</a>
+        <a href="" class="tag">Shop <i class="fa-solid fa-chevron-down"></i></a>
         <ul class="LinksOther">
           <li v-for="(element, index) in LinksMainShop" :key="index">
             <a class="links" href="">{{ element.name }}</a>
@@ -261,7 +267,7 @@ header {
   align-items: center;
   justify-content: center;
   background-color: $white;
-  filter: drop-shadow(0 -2px 5px $main-gray);
+  filter: drop-shadow(0 -2px 5px rgba(105, 105, 105, 0.415));
   height: 5rem;
 
   img {
@@ -269,34 +275,40 @@ header {
     margin-right: 5rem;
   }
 
+  .fa-chevron-down {
+    font-size: 10px;
+  }
+
   .headerMainLinks {
     display: flex;
     list-style: none;
     li {
       position: relative;
-      padding: 0 1.5rem;
+      padding: 0 1rem;
 
       .tag {
+        font-size: 14px;
         text-decoration: none;
         color: $seondary-page-text;
         position: relative;
         display: inline-block;
         transition: color 0.3s ease;
 
+        // HOVER EFFECT
+        // linea verde in entrata
         &::after {
           content: "";
           position: absolute;
           left: 0;
-          bottom: -2px;
+          bottom: -1px;
           width: 0;
-          height: 2px;
+          height: 1px;
           background-color: $main-green;
-          transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+          transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
         }
 
         &:hover {
           color: $main-green;
-
           &::after {
             width: 100%;
             left: 0;

@@ -59,9 +59,13 @@ export default {
 footer {
   background-color: $carousel-bg;
 
+  h4 {
+    font-weight: 600;
+  }
+
   .footer-container {
     margin: 0 auto;
-    width: 80%;
+    width: 70%;
     display: flex;
     padding-top: 50px;
 
@@ -72,8 +76,10 @@ footer {
         list-style-type: none;
 
         li {
+          font-size: 14px;
+          font-weight: 300;
           padding-top: 15px;
-          color: $secondary-text;
+          color: $main-gray;
         }
       }
     }
@@ -81,7 +87,7 @@ footer {
 }
 
 .fa-brands {
-  color: $secondary-text;
+  color: $main-gray;
   font-size: 1.5rem;
   padding-top: 20px;
 }
@@ -102,13 +108,13 @@ footer {
 
 a {
   text-decoration: none;
-  color: $secondary-text;
+  color: $main-gray;
 }
 
 .trademark {
-  color: $secondary-text;
-  font-size: 0.9rem;
-  font-weight: bold;
+  color: $main-gray;
+  font-size: 0.7rem;
+  font-weight: 300;
   text-align: center;
   padding-top: 50px;
   padding-bottom: 30px;
