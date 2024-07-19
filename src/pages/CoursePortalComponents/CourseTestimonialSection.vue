@@ -79,6 +79,7 @@ export default {
           :loop="true"
           :pagination="true"
           :modules="modules"
+          :speed="1000"
           class="mySwiper"
         >
           <swiper-slide
@@ -140,6 +141,7 @@ export default {
 
 .main {
   background-color: $carousel-bg;
+  position: relative;
 }
 
 .container {
@@ -166,9 +168,13 @@ export default {
     padding-bottom: 60px;
     :deep(.swiper-pagination) {
       position: absolute;
-      bottom: 0; // Posiziona i bullets in fondo al contenitore .testimonials
+      bottom: 385px;
       left: 0;
       width: 100%;
+    }
+
+    :deep(.swiper-pagination-bullet) {
+      margin-right: 20px;
     }
 
     :deep(.swiper-pagination-bullet-active) {
@@ -178,6 +184,14 @@ export default {
 
       // Per ingrandire il bullet attivo
       transform: scale(1.5);
+    }
+
+    :deep(.swiper-wrapper) {
+      position: static;
+    }
+
+    .swiper {
+      position: static;
     }
   }
 
