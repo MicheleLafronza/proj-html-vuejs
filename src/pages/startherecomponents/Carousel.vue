@@ -27,7 +27,33 @@ export default {
         },
       ],
       activeIndex: 0,
+      showNext: false,
+      showPrev: false,
     };
+  },
+  computed: {
+    nextButtonStyle() {
+      return this.showNext
+        ? {
+            backgroundImage: `url(${
+              this.slidesImg[(this.activeIndex + 1) % this.slidesImg.length]
+                .image
+            })`,
+          }
+        : {};
+    },
+    prevButtonStyle() {
+      return this.showPrev
+        ? {
+            backgroundImage: `url(${
+              this.slidesImg[
+                (this.activeIndex - 1 + this.slidesImg.length) %
+                  this.slidesImg.length
+              ].image
+            })`,
+          }
+        : {};
+    },
   },
   methods: {
     nextSlide() {
@@ -42,6 +68,12 @@ export default {
         this.activeIndex = this.slidesImg.length;
       }
       this.activeIndex = this.activeIndex - 1;
+    },
+    showNextImage(show) {
+      this.showNext = show;
+    },
+    showPrevImage(show) {
+      this.showPrev = show;
     },
   },
   mounted() {
@@ -58,10 +90,22 @@ export default {
 <template>
   <div class="carousel">
     <div class="slide">
-      <span @click="nextSlide" class="button next">
+      <span
+        @click="nextSlide"
+        class="button next"
+        @mouseover="showNextImage(true)"
+        @mouseleave="showNextImage(false)"
+        :style="nextButtonStyle"
+      >
         <i class="fa-solid fa-chevron-right"></i>
       </span>
-      <span @click="prevSlide" class="button prev">
+      <span
+        @click="prevSlide"
+        class="button prev"
+        @mouseover="showPrevImage(true)"
+        @mouseleave="showPrevImage(false)"
+        :style="prevButtonStyle"
+      >
         <i class="fa-solid fa-chevron-left"></i>
       </span>
       <img :src="slidesImg[activeIndex].image" alt="" />
@@ -87,6 +131,13 @@ export default {
 
 img {
   max-width: 100%;
+  max-height: 100%;
+  transition: all 3s ease-out;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .slide {
@@ -151,6 +202,11 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  z-index: 10;
 }
 
 .prev {
